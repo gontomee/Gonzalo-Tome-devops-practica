@@ -33,13 +33,13 @@ Swagger: http://127.0.0.1:8000/docs
 ### Construir la imagen
 
 ```bash
-docker build -t tienda-online:1.0 .
+docker build -t practica-devops:v1 .
 ```
 
 ### Ejecutar el contenedor
 
 ```bash
-docker run --rm -p 8000:8000 tienda-online:1.0
+docker run --rm -p 8000:8000 practica-devops:v1
 ```
 
 En segundo plano y con otro puerto del anfitrión:
