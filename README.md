@@ -45,15 +45,16 @@ docker run --rm -p 8000:8000 practica-devops:v1
 En segundo plano y con otro puerto del anfitrión:
 
 ```bash
-docker run -d --name tienda -p 9000:8000 tienda-online:1.0
+docker run -d --name tienda -p 9000:8000 practica-devops:v1
 docker logs tienda
-docker stop tienda && docker rm tienda
+docker stop tienda
+docker rm tienda
 ```
 
 Cambiando el puerto interno con la variable de entorno:
 
 ```bash
-docker run --rm -e PORT=8080 -p 8080:8080 tienda-online:1.0
+docker run --rm -p 8080:8000 practica-devops:v1
 ```
 
 ### Variables de entorno
@@ -88,11 +89,12 @@ También se puede abrir http://localhost:8000/docs y probar los endpoints desde 
 ### Publicar / descargar la imagen (registry)
 
 ```bash
-docker tag tienda-online:1.0 <usuario_dockerhub>/tienda-online:1.0
+docker tag practica-devops:v1 <usuario_dockerhub>/practica-devops:v1
 docker login
-docker push <usuario_dockerhub>/tienda-online:1.0
+docker push <usuario_dockerhub>/practica-devops:v1
+
 # Descargar:
-docker pull <usuario_dockerhub>/tienda-online:1.0
+docker pull <usuario_dockerhub>/practica-devops:v1
 ```
 
 ## Endpoints
